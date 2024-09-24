@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "QpD5myyRJxXkIkeG0DH037nW4y9KiSot6vFh+r3tjngGPEYqYgLU2mceH2rwt/DGb6WQi4wHZsnnYSlTwnmZXA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Alfredo Eichenberger\\Desktop\\PROYECTOS FINALES\\FRIGORIFICO\\Cargar_Archivo\\ENTIDAD\\ENTIDAD.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Alfredo Eichenberger\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\Alfredo Eichenberger\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,18 @@
+Error message: Authentication to host '127.0.0.1' for user 'root' using method 'mysql_native_password' failed with message: Unknown error 1049 Inner exception: Unknown error 1049 Stack trace:    en MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.AuthenticationFailed(Exception ex)
+   en MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.ReadPacket()
+   en MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.Authenticate(Boolean reset)
+   en MySql.Data.MySqlClient.NativeDriver.Authenticate(String authMethod, Boolean reset)
+   en MySql.Data.MySqlClient.NativeDriver.Open()
+   en MySql.Data.MySqlClient.Driver.Open()
+   en MySql.Data.MySqlClient.Driver.Create(MySqlConnectionStringBuilder settings)
+   en MySql.Data.MySqlClient.MySqlPool.CreateNewPooledConnection()
+   en MySql.Data.MySqlClient.MySqlPool.GetPooledConnection()
+   en MySql.Data.MySqlClient.MySqlPool.TryToGetDriver()
+   en MySql.Data.MySqlClient.MySqlPool.GetConnection()
+   en MySql.Data.MySqlClient.MySqlConnection.Open()
+   en System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.Fill(DataTable[] dataTables, Int32 startRecord, Int32 maxRecords, IDbCommand command, CommandBehavior behavior)
+   en System.Data.Common.DbDataAdapter.Fill(DataTable dataTable)
+   en DAO.daoUsuarios.BuscarEmpleado(String legajo) en C:\Users\Alfredo Eichenberger\Desktop\PROYECTOS FINALES\FRIGORIFICO\Cargar_Archivo - ConLosError\DAO\daoUsuarios.cs:línea 128
+   en NEGOCIO.negUsuarios.BuscarEmpleado(String legajo) en C:\Users\Alfredo Eichenberger\Desktop\PROYECTOS FINALES\FRIGORIFICO\Cargar_Archivo - ConLosError\NEGOCIO\negUsuarios.cs:línea 34
+   en Cargar_Archivo.VerInformes.btnBuscar_Click(Object sender, EventArgs e) en C:\Users\Alfredo Eichenberger\Desktop\PROYECTOS FINALES\FRIGORIFICO\Cargar_Archivo - ConLosError\Cargar_Archivo\VerInformes.cs:línea 130

@@ -1,0 +1,11 @@
+Error message: Unable to connect to any of the specified MySQL hosts. Inner exception: Se han producido uno o varios errores. Stack trace:    en MySql.Data.MySqlClient.NativeDriver.Open()
+   en MySql.Data.MySqlClient.Driver.Open()
+   en MySql.Data.MySqlClient.Driver.Create(MySqlConnectionStringBuilder settings)
+   en MySql.Data.MySqlClient.MySqlPool.CreateNewPooledConnection()
+   en MySql.Data.MySqlClient.MySqlPool.GetPooledConnection()
+   en MySql.Data.MySqlClient.MySqlPool.TryToGetDriver()
+   en MySql.Data.MySqlClient.MySqlPool.GetConnection()
+   en MySql.Data.MySqlClient.MySqlConnection.Open()
+   en DAO.daoUsuarios.BuscarDni(String legajo) en C:\Users\Alfredo Eichenberger\Desktop\ULTIM\Carga archivo supervisor - VERSION 20-05\Cargar_Archivo\DAO\daoUsuarios.cs:línea 18
+   en NEGOCIO.negUsuarios.BuscarDni(String legajo) en C:\Users\Alfredo Eichenberger\Desktop\ULTIM\Carga archivo supervisor - VERSION 20-05\Cargar_Archivo\NEGOCIO\negUsuarios.cs:línea 14
+   en Cargar_Archivo.Principal.btnCargar_Click(Object sender, EventArgs e) en C:\Users\Alfredo Eichenberger\Desktop\ULTIM\Carga archivo supervisor - VERSION 20-05\Cargar_Archivo\Cargar_Archivo\Principal.cs:línea 265
