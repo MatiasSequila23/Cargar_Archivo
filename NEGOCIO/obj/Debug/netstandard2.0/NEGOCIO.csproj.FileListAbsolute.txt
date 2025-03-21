@@ -133,3 +133,19 @@ C:\Users\Alfredo Eichenberger\Desktop\PROYECTOS FINALES\FRIGORIFICO\Cargar_Archi
 C:\Users\Alfredo Eichenberger\Desktop\PROYECTOS FINALES\FRIGORIFICO\Cargar_Archivo - ConLosError\NEGOCIO\obj\Debug\netstandard2.0\NEGOCIO.csproj.CopyComplete
 C:\Users\Alfredo Eichenberger\Desktop\PROYECTOS FINALES\FRIGORIFICO\Cargar_Archivo - ConLosError\NEGOCIO\obj\Debug\netstandard2.0\NEGOCIO.dll
 C:\Users\Alfredo Eichenberger\Desktop\PROYECTOS FINALES\FRIGORIFICO\Cargar_Archivo - ConLosError\NEGOCIO\obj\Debug\netstandard2.0\NEGOCIO.pdb
+C:\Sources\POWER CONSULTANT\Cargar_Archivo\NEGOCIO\bin\Debug\netstandard2.0\NEGOCIO.deps.json
+C:\Sources\POWER CONSULTANT\Cargar_Archivo\NEGOCIO\bin\Debug\netstandard2.0\NEGOCIO.dll
+C:\Sources\POWER CONSULTANT\Cargar_Archivo\NEGOCIO\bin\Debug\netstandard2.0\NEGOCIO.pdb
+C:\Sources\POWER CONSULTANT\Cargar_Archivo\NEGOCIO\bin\Debug\netstandard2.0\DAO.dll
+C:\Sources\POWER CONSULTANT\Cargar_Archivo\NEGOCIO\bin\Debug\netstandard2.0\ENTIDAD.dll
+C:\Sources\POWER CONSULTANT\Cargar_Archivo\NEGOCIO\bin\Debug\netstandard2.0\DAO.pdb
+C:\Sources\POWER CONSULTANT\Cargar_Archivo\NEGOCIO\bin\Debug\netstandard2.0\ENTIDAD.pdb
+C:\Sources\POWER CONSULTANT\Cargar_Archivo\NEGOCIO\obj\Debug\netstandard2.0\NEGOCIO.csproj.AssemblyReference.cache
+C:\Sources\POWER CONSULTANT\Cargar_Archivo\NEGOCIO\obj\Debug\netstandard2.0\NEGOCIO.GeneratedMSBuildEditorConfig.editorconfig
+C:\Sources\POWER CONSULTANT\Cargar_Archivo\NEGOCIO\obj\Debug\netstandard2.0\NEGOCIO.AssemblyInfoInputs.cache
+C:\Sources\POWER CONSULTANT\Cargar_Archivo\NEGOCIO\obj\Debug\netstandard2.0\NEGOCIO.AssemblyInfo.cs
+C:\Sources\POWER CONSULTANT\Cargar_Archivo\NEGOCIO\obj\Debug\netstandard2.0\NEGOCIO.csproj.CoreCompileInputs.cache
+C:\Sources\POWER CONSULTANT\Cargar_Archivo\NEGOCIO\obj\Debug\netstandard2.0\NEGOCIO.sourcelink.json
+C:\Sources\POWER CONSULTANT\Cargar_Archivo\NEGOCIO\obj\Debug\netstandard2.0\NEGOCIO.csproj.Up2Date
+C:\Sources\POWER CONSULTANT\Cargar_Archivo\NEGOCIO\obj\Debug\netstandard2.0\NEGOCIO.dll
+C:\Sources\POWER CONSULTANT\Cargar_Archivo\NEGOCIO\obj\Debug\netstandard2.0\NEGOCIO.pdb
