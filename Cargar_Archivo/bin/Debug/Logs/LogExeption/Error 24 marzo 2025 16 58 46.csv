@@ -1,0 +1,1 @@
+Error message: Índice fuera de los límites de la matriz. Stack trace:    en Cargar_Archivo.Principal.btnCargar_Click(Object sender, EventArgs e) en C:\Sources\POWER CONSULTANT\Cargar_Archivo\Cargar_Archivo\Principal.cs:línea 224

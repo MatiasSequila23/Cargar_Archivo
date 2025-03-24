@@ -1,0 +1,3 @@
+Error message: startIndex no puede ser mayor que la longitud de la cadena.
+Nombre del parámetro: startIndex Stack trace:    en System.String.Substring(Int32 startIndex, Int32 length)
+   en Cargar_Archivo.Principal.btnCargar_Click(Object sender, EventArgs e) en C:\Sources\POWER CONSULTANT\Cargar_Archivo\Cargar_Archivo\Principal.cs:línea 236
