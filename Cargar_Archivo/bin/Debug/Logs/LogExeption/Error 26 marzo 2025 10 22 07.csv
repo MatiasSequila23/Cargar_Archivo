@@ -1,0 +1,58 @@
+Error message: Authentication to host '127.0.0.1' for user 'root' using method 'caching_sha2_password' failed with message: Access denied for user 'root'@'localhost' (using password: NO) Inner exception: Access denied for user 'root'@'localhost' (using password: NO) Stack trace:    en MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.AuthenticationFailed(MySqlException ex)
+   en MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.<ReadPacketAsync>d__23.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd(Task task)
+   en MySql.Data.MySqlClient.Authentication.MySqlAuthenticationPlugin.<AuthenticateAsync>d__21.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en MySql.Data.MySqlClient.NativeDriver.<AuthenticateAsync>d__40.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.ConfiguredTaskAwaitable.ConfiguredTaskAwaiter.GetResult()
+   en MySql.Data.MySqlClient.NativeDriver.<OpenAsync>d__38.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   en MySql.Data.MySqlClient.NativeDriver.<OpenAsync>d__38.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en MySql.Data.MySqlClient.Driver.<OpenAsync>d__76.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en MySql.Data.MySqlClient.Driver.<CreateAsync>d__74.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en MySql.Data.MySqlClient.Driver.<CreateAsync>d__74.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en MySql.Data.MySqlClient.MySqlPool.<CreateNewPooledConnectionAsync>d__33.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd(Task task)
+   en MySql.Data.MySqlClient.MySqlPool.<GetPooledConnectionAsync>d__32.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en MySql.Data.MySqlClient.MySqlPool.<TryToGetDriverAsync>d__36.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en MySql.Data.MySqlClient.MySqlPool.<GetConnectionAsync>d__37.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd(Task task)
+   en MySql.Data.MySqlClient.MySqlConnection.<OpenAsync>d__94.MoveNext()
+--- Fin del seguimiento de la pila de la ubicación anterior donde se produjo la excepción ---
+   en System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   en System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   en MySql.Data.MySqlClient.MySqlConnection.Open()
+   en DAO.daoUsuarios.BuscarDni(String legajo) en D:\POWER CONSULTANT\Cargar_Archivo\DAO\daoUsuarios.cs:línea 18
+   en NEGOCIO.negUsuarios.BuscarDni(String legajo) en D:\POWER CONSULTANT\Cargar_Archivo\NEGOCIO\negUsuarios.cs:línea 14
+   en Cargar_Archivo.Principal.btnCargar_Click(Object sender, EventArgs e) en D:\POWER CONSULTANT\Cargar_Archivo\Cargar_Archivo\Principal.cs:línea 246

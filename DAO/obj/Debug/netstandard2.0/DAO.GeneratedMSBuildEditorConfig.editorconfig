@@ -1,5 +1,8 @@
 is_global = true
 build_property.RootNamespace = DAO
-build_property.ProjectDir = C:\Sources\POWER CONSULTANT\Cargar_Archivo\DAO\
+build_property.ProjectDir = D:\POWER CONSULTANT\Cargar_Archivo\DAO\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.CsWinRTUseWindowsUIXamlProjections = false
+build_property.EffectiveAnalysisLevelStyle = 
+build_property.EnableCodeStyleSeverity = 

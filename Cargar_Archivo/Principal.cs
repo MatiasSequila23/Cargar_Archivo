@@ -221,24 +221,21 @@ namespace Cargar_Archivo
                             {
                                 string[] l = archivo[i].Split(';');
 
-                                usu.Nombre = l[3];                                                                                                                                                                                                                                             // guardamos en usu.Cuil lo que esta en el vector l en la posicion 3. (cuarta palabra separada por ; de la linea del archivo).                                                                                                                                                                                                    // declaramos una variable int cen y guardamos convertido a int lo que esta en l en la posici                                                                                                                       // guardamos en usu.Centro lo que esta en cen, convertido a string y le agregamos los 0 necesarios para que tenga 3 caracteres.
-                                usu.legajo = l[2];                                                                                                                      // guardamos en usu.legajo que esta en el vector l en la posicion 6. (septima palabra separada por ; de la linea del archivo).
+                                usu.Nombre = l[1];                                                                                                                                                                                                                                             // guardamos en usu.Cuil lo que esta en el vector l en la posicion 3. (cuarta palabra separada por ; de la linea del archivo).                                                                                                                                                                                                    // declaramos una variable int cen y guardamos convertido a int lo que esta en l en la posici                                                                                                                       // guardamos en usu.Centro lo que esta en cen, convertido a string y le agregamos los 0 necesarios para que tenga 3 caracteres.
+                                usu.legajo = l[0];                                                                                                                      // guardamos en usu.legajo que esta en el vector l en la posicion 6. (septima palabra separada por ; de la linea del archivo).
 
 
-                                string numero = l[4];
+                                string numero = l[2];
 
-                                int car = numero.Length;
+                                //int car = numero.Length;
+                                //string monto = numero.Substring(0, (car - 4));
+                                //car = monto.Length;
+                                //numero = monto.Substring(3, car - 3);
+                                //string total = numero.Replace(".", "");
 
-                                string monto = numero.Substring(0, (car - 4));
-
-                                car = monto.Length;
-
-                                numero = monto.Substring(3, car - 3);
-
-                                string total = numero.Replace(".", "");
-
-                                usu.Importe = int.Parse(total);
-
+                                numero = numero.Replace("$", "").Trim();
+                                numero = numero.Replace(".", "");
+                                usu.Importe = int.Parse(numero.Split(',')[0]);
                                 importe_total = importe_total + usu.Importe;
 
 

@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Sources\\POWER CONSULTANT\\Cargar_Archivo\\NEGOCIO\\NEGOCIO.csproj": {}
+    "D:\\POWER CONSULTANT\\Cargar_Archivo\\NEGOCIO\\NEGOCIO.csproj": {}
   },
   "projects": {
-    "C:\\Sources\\POWER CONSULTANT\\Cargar_Archivo\\DAO\\DAO.csproj": {
+    "D:\\POWER CONSULTANT\\Cargar_Archivo\\DAO\\DAO.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Sources\\POWER CONSULTANT\\Cargar_Archivo\\DAO\\DAO.csproj",
+        "projectUniqueName": "D:\\POWER CONSULTANT\\Cargar_Archivo\\DAO\\DAO.csproj",
         "projectName": "DAO",
-        "projectPath": "C:\\Sources\\POWER CONSULTANT\\Cargar_Archivo\\DAO\\DAO.csproj",
-        "packagesPath": "C:\\Users\\USUARIO\\.nuget\\packages\\",
-        "outputPath": "C:\\Sources\\POWER CONSULTANT\\Cargar_Archivo\\DAO\\obj\\",
+        "projectPath": "D:\\POWER CONSULTANT\\Cargar_Archivo\\DAO\\DAO.csproj",
+        "packagesPath": "C:\\Users\\sequila.matias\\.nuget\\packages\\",
+        "outputPath": "D:\\POWER CONSULTANT\\Cargar_Archivo\\DAO\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\USUARIO\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\sequila.matias\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,15 +26,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netstandard2.0": {
             "targetAlias": "netstandard2.0",
             "projectReferences": {
-              "C:\\Sources\\POWER CONSULTANT\\Cargar_Archivo\\ENTIDAD\\ENTIDAD.csproj": {
-                "projectPath": "C:\\Sources\\POWER CONSULTANT\\Cargar_Archivo\\ENTIDAD\\ENTIDAD.csproj"
+              "D:\\POWER CONSULTANT\\Cargar_Archivo\\ENTIDAD\\ENTIDAD.csproj": {
+                "projectPath": "D:\\POWER CONSULTANT\\Cargar_Archivo\\ENTIDAD\\ENTIDAD.csproj"
               }
             }
           }
@@ -48,7 +47,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "netstandard2.0": {
@@ -76,24 +76,24 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Sources\\POWER CONSULTANT\\Cargar_Archivo\\ENTIDAD\\ENTIDAD.csproj": {
+    "D:\\POWER CONSULTANT\\Cargar_Archivo\\ENTIDAD\\ENTIDAD.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Sources\\POWER CONSULTANT\\Cargar_Archivo\\ENTIDAD\\ENTIDAD.csproj",
+        "projectUniqueName": "D:\\POWER CONSULTANT\\Cargar_Archivo\\ENTIDAD\\ENTIDAD.csproj",
         "projectName": "ENTIDAD",
-        "projectPath": "C:\\Sources\\POWER CONSULTANT\\Cargar_Archivo\\ENTIDAD\\ENTIDAD.csproj",
-        "packagesPath": "C:\\Users\\USUARIO\\.nuget\\packages\\",
-        "outputPath": "C:\\Sources\\POWER CONSULTANT\\Cargar_Archivo\\ENTIDAD\\obj\\",
+        "projectPath": "D:\\POWER CONSULTANT\\Cargar_Archivo\\ENTIDAD\\ENTIDAD.csproj",
+        "packagesPath": "C:\\Users\\sequila.matias\\.nuget\\packages\\",
+        "outputPath": "D:\\POWER CONSULTANT\\Cargar_Archivo\\ENTIDAD\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\USUARIO\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\sequila.matias\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -102,7 +102,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -120,7 +119,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "netstandard2.0": {
@@ -148,24 +148,24 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Sources\\POWER CONSULTANT\\Cargar_Archivo\\NEGOCIO\\NEGOCIO.csproj": {
+    "D:\\POWER CONSULTANT\\Cargar_Archivo\\NEGOCIO\\NEGOCIO.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Sources\\POWER CONSULTANT\\Cargar_Archivo\\NEGOCIO\\NEGOCIO.csproj",
+        "projectUniqueName": "D:\\POWER CONSULTANT\\Cargar_Archivo\\NEGOCIO\\NEGOCIO.csproj",
         "projectName": "NEGOCIO",
-        "projectPath": "C:\\Sources\\POWER CONSULTANT\\Cargar_Archivo\\NEGOCIO\\NEGOCIO.csproj",
-        "packagesPath": "C:\\Users\\USUARIO\\.nuget\\packages\\",
-        "outputPath": "C:\\Sources\\POWER CONSULTANT\\Cargar_Archivo\\NEGOCIO\\obj\\",
+        "projectPath": "D:\\POWER CONSULTANT\\Cargar_Archivo\\NEGOCIO\\NEGOCIO.csproj",
+        "packagesPath": "C:\\Users\\sequila.matias\\.nuget\\packages\\",
+        "outputPath": "D:\\POWER CONSULTANT\\Cargar_Archivo\\NEGOCIO\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\USUARIO\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\sequila.matias\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -174,15 +174,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netstandard2.0": {
             "targetAlias": "netstandard2.0",
             "projectReferences": {
-              "C:\\Sources\\POWER CONSULTANT\\Cargar_Archivo\\DAO\\DAO.csproj": {
-                "projectPath": "C:\\Sources\\POWER CONSULTANT\\Cargar_Archivo\\DAO\\DAO.csproj"
+              "D:\\POWER CONSULTANT\\Cargar_Archivo\\DAO\\DAO.csproj": {
+                "projectPath": "D:\\POWER CONSULTANT\\Cargar_Archivo\\DAO\\DAO.csproj"
               }
             }
           }
@@ -196,7 +195,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "netstandard2.0": {
@@ -224,7 +224,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }
