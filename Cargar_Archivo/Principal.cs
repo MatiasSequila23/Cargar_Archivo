@@ -48,437 +48,437 @@ namespace Cargar_Archivo
             InitializeComponent();
         }
 
-        private void btnCargar_Click(object sender, EventArgs e)
-        {
-            double porcentaje = 0;
+        //private void btnCargar_Click(object sender, EventArgs e)
+        //{
+        //    double porcentaje = 0;
 
-            try
-            {
+        //    try
+        //    {
 
-                int actualizados = 0;                                                                                                                           // declaramos una variable int actualizados en 0
-                int agregados = 0;                                                                                                                              // declaramos una variable int agregados en 0
+        //        int actualizados = 0;                                                                                                                           // declaramos una variable int actualizados en 0
+        //        int agregados = 0;                                                                                                                              // declaramos una variable int agregados en 0
 
-                if (cmbGaveta1.Text == "" && cmbGaveta2.Text == "")
-                {
-                    MessageBox.Show("Debe ingresar la denominacion de las gavetas.");
-                }
-                else
-                {
-                    if (cmbGaveta1.Text == "" || cmbGaveta2.Text == "")
-                    {
+        //        if (cmbGaveta1.Text == "" && cmbGaveta2.Text == "")
+        //        {
+        //            MessageBox.Show("Debe ingresar la denominacion de las gavetas.");
+        //        }
+        //        else
+        //        {
+        //            if (cmbGaveta1.Text == "" || cmbGaveta2.Text == "")
+        //            {
 
-                        btnCargar.Enabled = false;                                                                                                                      //deshabilitamos el boton para que no se pueda volver a cargar el archivo. Se debe cerrar y volver a abrir el programa.
-                        lblError.Text = "";                                                                                                                             // apenas se apreta el boton de cargar, mostramos en el label que esta actualizando la base de datos. Cuando termine de cargarlos a la bd, avisara por el mismo label.
-                        lblError2.Text = "";
-                        lblError.ForeColor = Color.DimGray;                                                                                                             // seteamos en el label de error el color de la letra.
-                        lblError2.ForeColor = Color.DimGray;
-                        lblError.Text = "Actualizando...";                                                                                                              // apenas se apreta el boton de cargar, mostramos en el label que esta actualizando la base de datos. Cuando termine de cargarlos a la bd, avisara por el mismo label.
-                        lblError2.Text = "Por favor espere.";
+        //                btnCargar.Enabled = false;                                                                                                                      //deshabilitamos el boton para que no se pueda volver a cargar el archivo. Se debe cerrar y volver a abrir el programa.
+        //                lblError.Text = "";                                                                                                                             // apenas se apreta el boton de cargar, mostramos en el label que esta actualizando la base de datos. Cuando termine de cargarlos a la bd, avisara por el mismo label.
+        //                lblError2.Text = "";
+        //                lblError.ForeColor = Color.DimGray;                                                                                                             // seteamos en el label de error el color de la letra.
+        //                lblError2.ForeColor = Color.DimGray;
+        //                lblError.Text = "Actualizando...";                                                                                                              // apenas se apreta el boton de cargar, mostramos en el label que esta actualizando la base de datos. Cuando termine de cargarlos a la bd, avisara por el mismo label.
+        //                lblError2.Text = "Por favor espere.";
 
 
-                        Usuarios usu = new Usuarios();                                                                                                                  // declaramos un objeto usuarios usu.
-                        int Con = negUsuarios.max_connections();
+        //                Usuarios usu = new Usuarios();                                                                                                                  // declaramos un objeto usuarios usu.
+        //                int Con = negUsuarios.max_connections();
 
-                        string[] archivo = File.ReadAllLines(Directory.GetCurrentDirectory() + "\\Archivo csv\\archivo.csv");                                           // con el streamreader abrimos el archivo que vamos a leer. Guardamos las lineas en el vector de string
-                        string nom = Path.GetFileName(Directory.GetCurrentDirectory() + "\\Archivo csv\\archivo.csv");                                                  // declaramos string nom y guardamos el nombre del archivo. para guardarlo luego en el archivo logs.
+        //                string[] archivo = File.ReadAllLines(Directory.GetCurrentDirectory() + "\\Archivo csv\\archivo.csv");                                           // con el streamreader abrimos el archivo que vamos a leer. Guardamos las lineas en el vector de string
+        //                string nom = Path.GetFileName(Directory.GetCurrentDirectory() + "\\Archivo csv\\archivo.csv");                                                  // declaramos string nom y guardamos el nombre del archivo. para guardarlo luego en el archivo logs.
 
 
-                        FileInfo info = new FileInfo(Directory.GetCurrentDirectory() + "\\Archivo csv\\archivo.csv");                                                   // en fileInfo info guardo la direccion del archivo para obtener informacion
+        //                FileInfo info = new FileInfo(Directory.GetCurrentDirectory() + "\\Archivo csv\\archivo.csv");                                                   // en fileInfo info guardo la direccion del archivo para obtener informacion
 
-                        string tam = (info.FormatBytes()).ToString();                                                                                                   // en tam, guardamos el peso del archivo con info.formatbytes. cuando los bytes pasan los 1024, nos lo convierte a kb, y asi sucesivamente..
-                        Archivos.EscribeArchivoLogs(DateTime.Now, nom, tam);                                                                                            // vamos a escribir el archivo logs enviando la fecha, nombre y tamaño.
+        //                string tam = (info.FormatBytes()).ToString();                                                                                                   // en tam, guardamos el peso del archivo con info.formatbytes. cuando los bytes pasan los 1024, nos lo convierte a kb, y asi sucesivamente..
+        //                Archivos.EscribeArchivoLogs(DateTime.Now, nom, tam);                                                                                            // vamos a escribir el archivo logs enviando la fecha, nombre y tamaño.
 
-                        string nombrearchivo = string.Format("archivo_{0:yyyyMMdd HHmmss}.old", DateTime.Now);                                                          // en nombre archivo, guardamos el nombre del archivo y le agregamos la fecha, hora y la extension .old
+        //                string nombrearchivo = string.Format("archivo_{0:yyyyMMdd HHmmss}.old", DateTime.Now);                                                          // en nombre archivo, guardamos el nombre del archivo y le agregamos la fecha, hora y la extension .old
 
-                        string path = Directory.GetCurrentDirectory() + "\\BackUp\\" + nombrearchivo;                                                                   // guardamos en path la direccion donde se va a guardar el backup y el nombre del archivo que vamos a crear como archivo.old
+        //                string path = Directory.GetCurrentDirectory() + "\\BackUp\\" + nombrearchivo;                                                                   // guardamos en path la direccion donde se va a guardar el backup y el nombre del archivo que vamos a crear como archivo.old
 
-                        File.Copy(Directory.GetCurrentDirectory() + "\\Archivo csv\\archivo.csv", path);                                                                // copiamos el archivo.csv que actualizamos en la bd como archivo.old en la carpeta backup, y vamos teniendo registro de todos los archivos que van actualizando.
+        //                File.Copy(Directory.GetCurrentDirectory() + "\\Archivo csv\\archivo.csv", path);                                                                // copiamos el archivo.csv que actualizamos en la bd como archivo.old en la carpeta backup, y vamos teniendo registro de todos los archivos que van actualizando.
 
 
-                        if (cmbGaveta1.Text != "")
-                        {
-                            denominacion1 = Convert.ToInt32(cmbGaveta1.SelectedItem);
-                        }
-                        else
-                        {
-                            if (cmbGaveta2.Text != "")
-                            {
-                                denominacion1 = Convert.ToInt32(cmbGaveta2.SelectedItem);
-                            }
-                        }
+        //                if (cmbGaveta1.Text != "")
+        //                {
+        //                    denominacion1 = Convert.ToInt32(cmbGaveta1.SelectedItem);
+        //                }
+        //                else
+        //                {
+        //                    if (cmbGaveta2.Text != "")
+        //                    {
+        //                        denominacion1 = Convert.ToInt32(cmbGaveta2.SelectedItem);
+        //                    }
+        //                }
 
-                        denominacion2 = 0;
-                        float Tota = archivo.Length;
-                        float por = Tota / 100;
-                        float var = 0;
-                        int con = 0;
-                        pbrTrabajo.Visible = true;
-                        for (int i = 1; i < archivo.Length; i++)
-                        {
+        //                denominacion2 = 0;
+        //                float Tota = archivo.Length;
+        //                float por = Tota / 100;
+        //                float var = 0;
+        //                int con = 0;
+        //                pbrTrabajo.Visible = true;
+        //                for (int i = 1; i < archivo.Length; i++)
+        //                {
 
-                            con = con + 1;
-                            if (archivo[i] != null)
-                            {
-                                if (var <= Total)
-                                {
+        //                    con = con + 1;
+        //                    if (archivo[i] != null)
+        //                    {
+        //                        if (var <= Total)
+        //                        {
 
-                                }
-                                string[] l = archivo[i].Split(';');
+        //                        }
+        //                        string[] l = archivo[i].Split(';');
 
-                                usu.Nombre = l[3];                                                                                                                                                                                                                                             // guardamos en usu.Cuil lo que esta en el vector l en la posicion 3. (cuarta palabra separada por ; de la linea del archivo).                                                                                                                                                                                                    // declaramos una variable int cen y guardamos convertido a int lo que esta en l en la posici                                                                                                                       // guardamos en usu.Centro lo que esta en cen, convertido a string y le agregamos los 0 necesarios para que tenga 3 caracteres.
-                                usu.legajo = l[2];                                                                                                                      // guardamos en usu.legajo que esta en el vector l en la posicion 6. (septima palabra separada por ; de la linea del archivo).
+        //                        usu.Nombre = l[3];                                                                                                                                                                                                                                             // guardamos en usu.Cuil lo que esta en el vector l en la posicion 3. (cuarta palabra separada por ; de la linea del archivo).                                                                                                                                                                                                    // declaramos una variable int cen y guardamos convertido a int lo que esta en l en la posici                                                                                                                       // guardamos en usu.Centro lo que esta en cen, convertido a string y le agregamos los 0 necesarios para que tenga 3 caracteres.
+        //                        usu.legajo = l[2];                                                                                                                      // guardamos en usu.legajo que esta en el vector l en la posicion 6. (septima palabra separada por ; de la linea del archivo).
 
 
-                                string numero = l[4];
+        //                        string numero = l[4];
 
-                                int car = numero.Length;
+        //                        int car = numero.Length;
 
-                                string monto = numero.Substring(0, (car - 4));
+        //                        string monto = numero.Substring(0, (car - 4));
 
-                                car = monto.Length;
+        //                        car = monto.Length;
 
-                                numero = monto.Substring(3, car - 3);
+        //                        numero = monto.Substring(3, car - 3);
 
-                                string total = numero.Replace(".", "");
+        //                        string total = numero.Replace(".", "");
 
-                                usu.Importe = int.Parse(total);
+        //                        usu.Importe = int.Parse(total);
 
-                                importe_total = importe_total + usu.Importe;
+        //                        importe_total = importe_total + usu.Importe;
 
-                                int dispUsuario = usu.Importe - (usu.Importe % denominacion1);
+        //                        int dispUsuario = usu.Importe - (usu.Importe % denominacion1);
 
-                                int fila = negUsuarios.BuscarDni(usu.legajo);                                                                                              // declaramos una variable int fila, llamamos a la funcion buscar dni y enviamos dni como paramero. Si encuentra un dni devolvera 1 en la fila,sino devueve 0.
+        //                        int fila = negUsuarios.BuscarDni(usu.legajo);                                                                                              // declaramos una variable int fila, llamamos a la funcion buscar dni y enviamos dni como paramero. Si encuentra un dni devolvera 1 en la fila,sino devueve 0.
 
-                                if (fila == 1)                                                                                                                          // nos preguntamos si fila es igual a uno.
-                                {
-                                    int a = negUsuarios.ActualizarMonto(usu.legajo, usu.Importe);                                                                          // si es igual a 1, declaramos una variable int a y llamamos a actualizar monto enviando dni e importe. Si encontro dni, va a devolver en a 1, sino devuelve 0.
-                                    if (a == 1)                                                                                                                          // preguntamos si a es igual a 1.
-                                    {
-                                        actualizados++;                                                                                                                 // si es igual, agrega uno a actualiados.
-                                    }
-                                }
-                                else                                                                                                                                    // si fila es distinto de uno
-                                {
-                                    int a = negUsuarios.InsertarNuevoUsuario(usu);                                                                                      // declaramos una variable int a y llamamos a la funcion instarnuevousuario y mandamos el objeto usuario como parametro. Si lo pudo guardar, devuelve uno en a sino devuelve 0
-                                    if (a == 1)                                                                                                                          // preguntamos si a es igual a 1
-                                    {
-                                        agregados++;                                                                                                                    // si es igual a 1, agrega uno a agregado.
-                                    }
-                                }
+        //                        if (fila == 1)                                                                                                                          // nos preguntamos si fila es igual a uno.
+        //                        {
+        //                            int a = negUsuarios.ActualizarMonto(usu.legajo, usu.Importe);                                                                          // si es igual a 1, declaramos una variable int a y llamamos a actualizar monto enviando dni e importe. Si encontro dni, va a devolver en a 1, sino devuelve 0.
+        //                            if (a == 1)                                                                                                                          // preguntamos si a es igual a 1.
+        //                            {
+        //                                actualizados++;                                                                                                                 // si es igual, agrega uno a actualiados.
+        //                            }
+        //                        }
+        //                        else                                                                                                                                    // si fila es distinto de uno
+        //                        {
+        //                            int a = negUsuarios.InsertarNuevoUsuario(usu);                                                                                      // declaramos una variable int a y llamamos a la funcion instarnuevousuario y mandamos el objeto usuario como parametro. Si lo pudo guardar, devuelve uno en a sino devuelve 0
+        //                            if (a == 1)                                                                                                                          // preguntamos si a es igual a 1
+        //                            {
+        //                                agregados++;                                                                                                                    // si es igual a 1, agrega uno a agregado.
+        //                            }
+        //                        }
 
-                                cant_gav_1 = (dispUsuario / denominacion1) + cant_gav_1;
-                                cant_gav_2 = 0;
+        //                        cant_gav_1 = (dispUsuario / denominacion1) + cant_gav_1;
+        //                        cant_gav_2 = 0;
 
-                            }
-                            importe_apagar = (cant_gav_1 * denominacion1);
+        //                    }
+        //                    importe_apagar = (cant_gav_1 * denominacion1);
 
 
-
-                            pbrTrabajo.Maximum = archivo.Length;
-                            if (pbrTrabajo.Value < archivo.Length)
-                            {
-                                pbrTrabajo.Value++;
-                            }
-
-                        }
-                        pbrTrabajo.Visible = false;
-                    }
-                    else
-                    {
-                        btnCargar.Enabled = false;                                                                                                                      //deshabilitamos el boton para que no se pueda volver a cargar el archivo. Se debe cerrar y volver a abrir el programa.
-                        lblError.Text = "";                                                                                                                             // apenas se apreta el boton de cargar, mostramos en el label que esta actualizando la base de datos. Cuando termine de cargarlos a la bd, avisara por el mismo label.
-                        lblError2.Text = "";
-                        lblError.ForeColor = Color.DimGray;                                                                                                             // seteamos en el label de error el color de la letra.
-                        lblError2.ForeColor = Color.DimGray;
-                        lblError.Text = "Actualizando...";                                                                                                              // apenas se apreta el boton de cargar, mostramos en el label que esta actualizando la base de datos. Cuando termine de cargarlos a la bd, avisara por el mismo label.
-                        lblError2.Text = "Por favor espere.";
-
-                        int fila1 = negUsuarios.max_connections();
-                        Usuarios usu = new Usuarios();                                                                                                                  // declaramos un objeto usuarios usu.
-
-
-                        string[] archivo = File.ReadAllLines(Directory.GetCurrentDirectory() + "\\Archivo csv\\archivo.csv");                                           // con el streamreader abrimos el archivo que vamos a leer. Guardamos las lineas en el vector de string
-                        string nom = Path.GetFileName(Directory.GetCurrentDirectory() + "\\Archivo csv\\archivo.csv");                                                  // declaramos string nom y guardamos el nombre del archivo. para guardarlo luego en el archivo logs.
-
-
-                        FileInfo info = new FileInfo(Directory.GetCurrentDirectory() + "\\Archivo csv\\archivo.csv");                                                   // en fileInfo info guardo la direccion del archivo para obtener informacion
-
-                        string tam = (info.FormatBytes()).ToString();                                                                                                   // en tam, guardamos el peso del archivo con info.formatbytes. cuando los bytes pasan los 1024, nos lo convierte a kb, y asi sucesivamente..
-                        Archivos.EscribeArchivoLogs(DateTime.Now, nom, tam);                                                                                            // vamos a escribir el archivo logs enviando la fecha, nombre y tamaño.
-
-                        string nombrearchivo = string.Format("archivo_{0:yyyyMMdd HHmmss}.old", DateTime.Now);                                                          // en nombre archivo, guardamos el nombre del archivo y le agregamos la fecha, hora y la extension .old
-
-                        string path = Directory.GetCurrentDirectory() + "\\BackUp\\" + nombrearchivo;                                                                   // guardamos en path la direccion donde se va a guardar el backup y el nombre del archivo que vamos a crear como archivo.old
-
-                        File.Copy(Directory.GetCurrentDirectory() + "\\Archivo csv\\archivo.csv", path);                                                                // copiamos el archivo.csv que actualizamos en la bd como archivo.old en la carpeta backup, y vamos teniendo registro de todos los archivos que van actualizando.
-
-
-                        pbrTrabajo.Visible = true;
-                        for (int i = 1; i < archivo.Length; i++)
-                        {                                                                                                                                  // iniciamos un ciclo for por la cantidad de lineas que tiene el archivo. Iniciamos en 1 asi no lee la primer linea del encabezado.
-
-                            if (archivo[i] != null)
-                            {
-                                string[] l = archivo[i].Split(';');
-
-                                usu.Nombre = l[1];                                                                                                                                                                                                                                             // guardamos en usu.Cuil lo que esta en el vector l en la posicion 3. (cuarta palabra separada por ; de la linea del archivo).                                                                                                                                                                                                    // declaramos una variable int cen y guardamos convertido a int lo que esta en l en la posici                                                                                                                       // guardamos en usu.Centro lo que esta en cen, convertido a string y le agregamos los 0 necesarios para que tenga 3 caracteres.
-                                usu.legajo = l[0];                                                                                                                      // guardamos en usu.legajo que esta en el vector l en la posicion 6. (septima palabra separada por ; de la linea del archivo).
-
-
-                                string numero = l[2];
-
-                                //int car = numero.Length;
-                                //string monto = numero.Substring(0, (car - 4));
-                                //car = monto.Length;
-                                //numero = monto.Substring(3, car - 3);
-                                //string total = numero.Replace(".", "");
-
-                                numero = numero.Replace("$", "").Trim();
-                                numero = numero.Replace(".", "");
-                                usu.Importe = int.Parse(numero.Split(',')[0]);
-                                importe_total = importe_total + usu.Importe;
-
-
-                                denominacion1 = Convert.ToInt32(cmbGaveta1.SelectedItem);
-                                denominacion2 = Convert.ToInt32(cmbGaveta2.SelectedItem);
-
-
-                                int fila = negUsuarios.BuscarDni(usu.legajo);                                                                                              // declaramos una variable int fila, llamamos a la funcion buscar dni y enviamos dni como paramero. Si encuentra un dni devolvera 1 en la fila,sino devueve 0.
-
-                                if (fila == 1)                                                                                                                          // nos preguntamos si fila es igual a uno.
-                                {
-                                    int a = negUsuarios.ActualizarMonto(usu.legajo, usu.Importe);                                                                          // si es igual a 1, declaramos una variable int a y llamamos a actualizar monto enviando dni e importe. Si encontro dni, va a devolver en a 1, sino devuelve 0.
-                                    if (a == 1)                                                                                                                          // preguntamos si a es igual a 1.
-                                    {
-                                        actualizados++;                                                                                                                 // si es igual, agrega uno a actualiados.
-                                    }
-                                }
-                                else                                                                                                                                    // si fila es distinto de uno
-                                {
-                                    int a = negUsuarios.InsertarNuevoUsuario(usu);                                                                                      // declaramos una variable int a y llamamos a la funcion instarnuevousuario y mandamos el objeto usuario como parametro. Si lo pudo guardar, devuelve uno en a sino devuelve 0
-                                    if (a == 1)                                                                                                                          // preguntamos si a es igual a 1
-                                    {
-                                        agregados++;                                                                                                                    // si es igual a 1, agrega uno a agregado.
-                                    }
-                                }
-
-
-                                if (denominacion1 == 500 & denominacion2 == 200)
-                                {
-                                    int cambio = denominacion1;
-                                    denominacion1 = denominacion2;
-                                    denominacion2 = cambio;
-                                    CantD2Finall = 0;
-                                    ContadorF = 0;
-                                    contador = 0;
-                                    AB = 99999;
-                                    CantD1Final = 0;
-                                    CantD2Final = 0;
-                                    Total = Convert.ToInt32(usu.Importe);
-
-                                    CantD2Inicio = aux / denominacion2;
-                                    difd1d2 = denominacion1 / denominacion2;
-                                    int resto = Total % denominacion1;
-                                    if (resto != 0)
-                                    {
-                                        CantD2Inicio = 1;
-                                        Total = Total - 500;
-                                    }
-                                    CantD1Inicio = Total / denominacion1;
-                                    CantD2Final = CantD2Inicio;
-                                    for (int a = CantD1Inicio; a >= 5; a = a - 5)
-                                    {
-
-                                        int auxiliar = Math.Abs(a - CantD2Final);
-                                        if (AB > auxiliar)
-                                        {
-                                            AB = auxiliar;
-                                            CantD1Final = a;
-                                            CantD2Finall = (2 * contador) + CantD2Inicio;
-                                            ContadorF = contador;
-
-                                        }
-                                        contador++;
-                                        CantD2Final = (contador * 2) + CantD2Inicio;
-                                    }
-                                    montoentrega = CantD1Final * denominacion1 + CantD2Finall * denominacion2;
-
-                                    cant_gav_1 = CantD1Final + cant_gav_1;
-                                    cant_gav_2 = CantD2Finall + cant_gav_2;
-                                    importe_apagar = importe_apagar + montoentrega;
-                                }
-                                else
-                                {
-                                    if (denominacion1 == 200 & denominacion2 == 500)
-                                    {
-                                        CantD2Finall = 0;
-                                        ContadorF = 0;
-                                        contador = 0;
-                                        AB = 99999;
-                                        CantD1Final = 0;
-                                        CantD2Final = 0;
-                                        Total = Convert.ToInt32(usu.Importe);
-
-                                        CantD2Inicio = aux / denominacion2;
-                                        difd1d2 = denominacion1 / denominacion2;
-                                        int resto = Total % denominacion1;
-                                        if (resto != 0)
-                                        {
-                                            CantD2Inicio = 1;
-                                            Total = Total - 500;
-                                        }
-                                        CantD1Inicio = Total / denominacion1;
-                                        CantD2Final = CantD2Inicio;
-                                        for (int a = CantD1Inicio; a >= 5; a = a - 5)
-                                        {
-
-                                            int auxiliar = Math.Abs(a - CantD2Final);
-                                            if (AB > auxiliar)
-                                            {
-                                                AB = auxiliar;
-                                                CantD1Final = a;
-                                                CantD2Finall = (2 * contador) + CantD2Inicio;
-                                                ContadorF = contador;
-
-                                            }
-                                            contador++;
-                                            CantD2Final = (contador * 2) + CantD2Inicio;
-                                        }
-                                        montoentrega = CantD1Final * denominacion1 + CantD2Finall * denominacion2;
-
-                                        cant_gav_1 = CantD1Final + cant_gav_1;
-                                        cant_gav_2 = CantD2Finall + cant_gav_2;
-                                        importe_apagar = importe_apagar + montoentrega;
-                                    }
-                                    else
-                                    {
-                                        if (denominacion1 < denominacion2)
-                                        {
-                                            int aux = denominacion1;
-                                            denominacion1 = denominacion2;
-                                            denominacion2 = aux;
-
-
-                                            CantD2Finall = 0;
-                                            ContadorF = 0;
-                                            contador = 0;
-                                            AB = 99999;
-                                            CantD1Final = 0;
-                                            CantD2Final = 0;
-                                            Total = Convert.ToInt32(usu.Importe);
-                                            CantD1Inicio = Total / denominacion1;
-                                            aux = Total % denominacion1;
-                                            CantD2Inicio = aux / denominacion2;
-                                            difd1d2 = denominacion1 / denominacion2;
-
-                                            for (int a = CantD1Inicio; a >= 0; a--)
-                                            {
-
-                                                int auxiliar = Math.Abs(a - CantD2Final);
-                                                if (AB > auxiliar)
-                                                {
-                                                    AB = auxiliar;
-                                                    CantD1Final = a;
-                                                    CantD2Finall = (contador * difd1d2) + CantD2Inicio;
-                                                    ContadorF = contador;
-
-                                                }
-                                                contador++;
-                                                CantD2Final = (contador * difd1d2) + CantD2Inicio;
-
-                                            }
-                                            montoentrega = CantD1Final * denominacion1 + CantD2Finall * denominacion2;
-
-                                            cant_gav_1 = CantD1Final + cant_gav_1;
-                                            cant_gav_2 = CantD2Finall + cant_gav_2;
-                                            importe_apagar = importe_apagar + montoentrega;
-
-                                        }
-                                        else
-                                        {
-                                            CantD2Finall = 0;
-                                            ContadorF = 0;
-                                            contador = 0;
-                                            AB = 99999;
-                                            CantD1Final = 0;
-                                            CantD2Final = 0;
-                                            Total = Convert.ToInt32(usu.Importe);
-                                            CantD1Inicio = Total / denominacion1;
-                                            aux = Total % denominacion1;
-                                            CantD2Inicio = aux / denominacion2;
-                                            difd1d2 = denominacion1 / denominacion2;
-
-                                            for (int a = CantD1Inicio; a >= 0; a--)
-                                            {
-
-                                                int auxiliar = Math.Abs(a - CantD2Final);
-                                                if (AB > auxiliar)
-                                                {
-                                                    AB = auxiliar;
-                                                    CantD1Final = a;
-                                                    CantD2Finall = (contador * difd1d2) + CantD2Inicio;
-                                                    ContadorF = contador;
-
-                                                }
-                                                contador++;
-                                                CantD2Final = (contador * difd1d2) + CantD2Inicio;
-
-                                            }
-                                            montoentrega = CantD1Final * denominacion1 + CantD2Finall * denominacion2;
-
-                                            cant_gav_1 = CantD1Final + cant_gav_1;
-                                            cant_gav_2 = CantD2Finall + cant_gav_2;
-                                            importe_apagar = importe_apagar + montoentrega;
-                                        }
-                                    }
-
-                                }
-
-                            }
-
-                            pbrTrabajo.Maximum = archivo.Length;
-                            if (pbrTrabajo.Value < archivo.Length)
-                            {
-                                pbrTrabajo.Value++;
-                            }
-                        }
-                        pbrTrabajo.Visible = false;
-                    }
-
-                    lblBill1.Text = "Cantidad de billetes de $" + denominacion1.ToString() + ":";
-                    lblBill2.Text = "Cantidad de billetes de $" + denominacion2.ToString() + ":";
-
-                    txtBill1.Text = cant_gav_1.ToString();
-                    txtBill2.Text = cant_gav_2.ToString();
-                    txtDisponible.Text = importe_apagar.ToString();
-                    txtTotal.Text = importe_total.ToString();
-
-                }
-
-                lblError.ForeColor = Color.Green;
-                lblError2.ForeColor = Color.Green;
-                lblError.Text = "Se actualizaron " + actualizados + " usuarios";                                                                            // mostramos la cantidad que agrego y que actualizo.
-                lblError2.Text = "Se agregaron " + agregados + " usuarios nuevos.";
-
-            }
-            catch (Exception ex)
-            {
-
-                // Qué ha sucedido
-                var mensaje = "Error message: " + ex.Message;
-                // Información sobre la excepción interna
-                if (ex.InnerException != null)
-                {
-                    mensaje = mensaje + " Inner exception: " + ex.InnerException.Message;
-                }
-                // Dónde ha sucedido
-                mensaje = mensaje + " Stack trace: " + ex.StackTrace;
-                LogExeption(mensaje);
-                Error frm = new Error();
-                frm.ShowDialog();
-            }
-
-        }
+
+        //                    pbrTrabajo.Maximum = archivo.Length;
+        //                    if (pbrTrabajo.Value < archivo.Length)
+        //                    {
+        //                        pbrTrabajo.Value++;
+        //                    }
+
+        //                }
+        //                pbrTrabajo.Visible = false;
+        //            }
+        //            else
+        //            {
+        //                btnCargar.Enabled = false;                                                                                                                      //deshabilitamos el boton para que no se pueda volver a cargar el archivo. Se debe cerrar y volver a abrir el programa.
+        //                lblError.Text = "";                                                                                                                             // apenas se apreta el boton de cargar, mostramos en el label que esta actualizando la base de datos. Cuando termine de cargarlos a la bd, avisara por el mismo label.
+        //                lblError2.Text = "";
+        //                lblError.ForeColor = Color.DimGray;                                                                                                             // seteamos en el label de error el color de la letra.
+        //                lblError2.ForeColor = Color.DimGray;
+        //                lblError.Text = "Actualizando...";                                                                                                              // apenas se apreta el boton de cargar, mostramos en el label que esta actualizando la base de datos. Cuando termine de cargarlos a la bd, avisara por el mismo label.
+        //                lblError2.Text = "Por favor espere.";
+
+        //                int fila1 = negUsuarios.max_connections();
+        //                Usuarios usu = new Usuarios();                                                                                                                  // declaramos un objeto usuarios usu.
+
+
+        //                string[] archivo = File.ReadAllLines(Directory.GetCurrentDirectory() + "\\Archivo csv\\archivo.csv");                                           // con el streamreader abrimos el archivo que vamos a leer. Guardamos las lineas en el vector de string
+        //                string nom = Path.GetFileName(Directory.GetCurrentDirectory() + "\\Archivo csv\\archivo.csv");                                                  // declaramos string nom y guardamos el nombre del archivo. para guardarlo luego en el archivo logs.
+
+
+        //                FileInfo info = new FileInfo(Directory.GetCurrentDirectory() + "\\Archivo csv\\archivo.csv");                                                   // en fileInfo info guardo la direccion del archivo para obtener informacion
+
+        //                string tam = (info.FormatBytes()).ToString();                                                                                                   // en tam, guardamos el peso del archivo con info.formatbytes. cuando los bytes pasan los 1024, nos lo convierte a kb, y asi sucesivamente..
+        //                Archivos.EscribeArchivoLogs(DateTime.Now, nom, tam);                                                                                            // vamos a escribir el archivo logs enviando la fecha, nombre y tamaño.
+
+        //                string nombrearchivo = string.Format("archivo_{0:yyyyMMdd HHmmss}.old", DateTime.Now);                                                          // en nombre archivo, guardamos el nombre del archivo y le agregamos la fecha, hora y la extension .old
+
+        //                string path = Directory.GetCurrentDirectory() + "\\BackUp\\" + nombrearchivo;                                                                   // guardamos en path la direccion donde se va a guardar el backup y el nombre del archivo que vamos a crear como archivo.old
+
+        //                File.Copy(Directory.GetCurrentDirectory() + "\\Archivo csv\\archivo.csv", path);                                                                // copiamos el archivo.csv que actualizamos en la bd como archivo.old en la carpeta backup, y vamos teniendo registro de todos los archivos que van actualizando.
+
+
+        //                pbrTrabajo.Visible = true;
+        //                for (int i = 1; i < archivo.Length; i++)
+        //                {                                                                                                                                  // iniciamos un ciclo for por la cantidad de lineas que tiene el archivo. Iniciamos en 1 asi no lee la primer linea del encabezado.
+
+        //                    if (archivo[i] != null)
+        //                    {
+        //                        string[] l = archivo[i].Split(';');
+
+        //                        usu.Nombre = l[1];                                                                                                                                                                                                                                             // guardamos en usu.Cuil lo que esta en el vector l en la posicion 3. (cuarta palabra separada por ; de la linea del archivo).                                                                                                                                                                                                    // declaramos una variable int cen y guardamos convertido a int lo que esta en l en la posici                                                                                                                       // guardamos en usu.Centro lo que esta en cen, convertido a string y le agregamos los 0 necesarios para que tenga 3 caracteres.
+        //                        usu.legajo = l[0];                                                                                                                      // guardamos en usu.legajo que esta en el vector l en la posicion 6. (septima palabra separada por ; de la linea del archivo).
+
+
+        //                        string numero = l[2];
+
+        //                        //int car = numero.Length;
+        //                        //string monto = numero.Substring(0, (car - 4));
+        //                        //car = monto.Length;
+        //                        //numero = monto.Substring(3, car - 3);
+        //                        //string total = numero.Replace(".", "");
+
+        //                        numero = numero.Replace("$", "").Trim();
+        //                        numero = numero.Replace(".", "");
+        //                        usu.Importe = int.Parse(numero.Split(',')[0]);
+        //                        importe_total = importe_total + usu.Importe;
+
+
+        //                        denominacion1 = Convert.ToInt32(cmbGaveta1.SelectedItem);
+        //                        denominacion2 = Convert.ToInt32(cmbGaveta2.SelectedItem);
+
+
+        //                        int fila = negUsuarios.BuscarDni(usu.legajo);                                                                                              // declaramos una variable int fila, llamamos a la funcion buscar dni y enviamos dni como paramero. Si encuentra un dni devolvera 1 en la fila,sino devueve 0.
+
+        //                        if (fila == 1)                                                                                                                          // nos preguntamos si fila es igual a uno.
+        //                        {
+        //                            int a = negUsuarios.ActualizarMonto(usu.legajo, usu.Importe);                                                                          // si es igual a 1, declaramos una variable int a y llamamos a actualizar monto enviando dni e importe. Si encontro dni, va a devolver en a 1, sino devuelve 0.
+        //                            if (a == 1)                                                                                                                          // preguntamos si a es igual a 1.
+        //                            {
+        //                                actualizados++;                                                                                                                 // si es igual, agrega uno a actualiados.
+        //                            }
+        //                        }
+        //                        else                                                                                                                                    // si fila es distinto de uno
+        //                        {
+        //                            int a = negUsuarios.InsertarNuevoUsuario(usu);                                                                                      // declaramos una variable int a y llamamos a la funcion instarnuevousuario y mandamos el objeto usuario como parametro. Si lo pudo guardar, devuelve uno en a sino devuelve 0
+        //                            if (a == 1)                                                                                                                          // preguntamos si a es igual a 1
+        //                            {
+        //                                agregados++;                                                                                                                    // si es igual a 1, agrega uno a agregado.
+        //                            }
+        //                        }
+
+
+        //                        if (denominacion1 == 500 & denominacion2 == 200)
+        //                        {
+        //                            int cambio = denominacion1;
+        //                            denominacion1 = denominacion2;
+        //                            denominacion2 = cambio;
+        //                            CantD2Finall = 0;
+        //                            ContadorF = 0;
+        //                            contador = 0;
+        //                            AB = 99999;
+        //                            CantD1Final = 0;
+        //                            CantD2Final = 0;
+        //                            Total = Convert.ToInt32(usu.Importe);
+
+        //                            CantD2Inicio = aux / denominacion2;
+        //                            difd1d2 = denominacion1 / denominacion2;
+        //                            int resto = Total % denominacion1;
+        //                            if (resto != 0)
+        //                            {
+        //                                CantD2Inicio = 1;
+        //                                Total = Total - 500;
+        //                            }
+        //                            CantD1Inicio = Total / denominacion1;
+        //                            CantD2Final = CantD2Inicio;
+        //                            for (int a = CantD1Inicio; a >= 5; a = a - 5)
+        //                            {
+
+        //                                int auxiliar = Math.Abs(a - CantD2Final);
+        //                                if (AB > auxiliar)
+        //                                {
+        //                                    AB = auxiliar;
+        //                                    CantD1Final = a;
+        //                                    CantD2Finall = (2 * contador) + CantD2Inicio;
+        //                                    ContadorF = contador;
+
+        //                                }
+        //                                contador++;
+        //                                CantD2Final = (contador * 2) + CantD2Inicio;
+        //                            }
+        //                            montoentrega = CantD1Final * denominacion1 + CantD2Finall * denominacion2;
+
+        //                            cant_gav_1 = CantD1Final + cant_gav_1;
+        //                            cant_gav_2 = CantD2Finall + cant_gav_2;
+        //                            importe_apagar = importe_apagar + montoentrega;
+        //                        }
+        //                        else
+        //                        {
+        //                            if (denominacion1 == 200 & denominacion2 == 500)
+        //                            {
+        //                                CantD2Finall = 0;
+        //                                ContadorF = 0;
+        //                                contador = 0;
+        //                                AB = 99999;
+        //                                CantD1Final = 0;
+        //                                CantD2Final = 0;
+        //                                Total = Convert.ToInt32(usu.Importe);
+
+        //                                CantD2Inicio = aux / denominacion2;
+        //                                difd1d2 = denominacion1 / denominacion2;
+        //                                int resto = Total % denominacion1;
+        //                                if (resto != 0)
+        //                                {
+        //                                    CantD2Inicio = 1;
+        //                                    Total = Total - 500;
+        //                                }
+        //                                CantD1Inicio = Total / denominacion1;
+        //                                CantD2Final = CantD2Inicio;
+        //                                for (int a = CantD1Inicio; a >= 5; a = a - 5)
+        //                                {
+
+        //                                    int auxiliar = Math.Abs(a - CantD2Final);
+        //                                    if (AB > auxiliar)
+        //                                    {
+        //                                        AB = auxiliar;
+        //                                        CantD1Final = a;
+        //                                        CantD2Finall = (2 * contador) + CantD2Inicio;
+        //                                        ContadorF = contador;
+
+        //                                    }
+        //                                    contador++;
+        //                                    CantD2Final = (contador * 2) + CantD2Inicio;
+        //                                }
+        //                                montoentrega = CantD1Final * denominacion1 + CantD2Finall * denominacion2;
+
+        //                                cant_gav_1 = CantD1Final + cant_gav_1;
+        //                                cant_gav_2 = CantD2Finall + cant_gav_2;
+        //                                importe_apagar = importe_apagar + montoentrega;
+        //                            }
+        //                            else
+        //                            {
+        //                                if (denominacion1 < denominacion2)
+        //                                {
+        //                                    int aux = denominacion1;
+        //                                    denominacion1 = denominacion2;
+        //                                    denominacion2 = aux;
+
+
+        //                                    CantD2Finall = 0;
+        //                                    ContadorF = 0;
+        //                                    contador = 0;
+        //                                    AB = 99999;
+        //                                    CantD1Final = 0;
+        //                                    CantD2Final = 0;
+        //                                    Total = Convert.ToInt32(usu.Importe);
+        //                                    CantD1Inicio = Total / denominacion1;
+        //                                    aux = Total % denominacion1;
+        //                                    CantD2Inicio = aux / denominacion2;
+        //                                    difd1d2 = denominacion1 / denominacion2;
+
+        //                                    for (int a = CantD1Inicio; a >= 0; a--)
+        //                                    {
+
+        //                                        int auxiliar = Math.Abs(a - CantD2Final);
+        //                                        if (AB > auxiliar)
+        //                                        {
+        //                                            AB = auxiliar;
+        //                                            CantD1Final = a;
+        //                                            CantD2Finall = (contador * difd1d2) + CantD2Inicio;
+        //                                            ContadorF = contador;
+
+        //                                        }
+        //                                        contador++;
+        //                                        CantD2Final = (contador * difd1d2) + CantD2Inicio;
+
+        //                                    }
+        //                                    montoentrega = CantD1Final * denominacion1 + CantD2Finall * denominacion2;
+
+        //                                    cant_gav_1 = CantD1Final + cant_gav_1;
+        //                                    cant_gav_2 = CantD2Finall + cant_gav_2;
+        //                                    importe_apagar = importe_apagar + montoentrega;
+
+        //                                }
+        //                                else
+        //                                {
+        //                                    CantD2Finall = 0;
+        //                                    ContadorF = 0;
+        //                                    contador = 0;
+        //                                    AB = 99999;
+        //                                    CantD1Final = 0;
+        //                                    CantD2Final = 0;
+        //                                    Total = Convert.ToInt32(usu.Importe);
+        //                                    CantD1Inicio = Total / denominacion1;
+        //                                    aux = Total % denominacion1;
+        //                                    CantD2Inicio = aux / denominacion2;
+        //                                    difd1d2 = denominacion1 / denominacion2;
+
+        //                                    for (int a = CantD1Inicio; a >= 0; a--)
+        //                                    {
+
+        //                                        int auxiliar = Math.Abs(a - CantD2Final);
+        //                                        if (AB > auxiliar)
+        //                                        {
+        //                                            AB = auxiliar;
+        //                                            CantD1Final = a;
+        //                                            CantD2Finall = (contador * difd1d2) + CantD2Inicio;
+        //                                            ContadorF = contador;
+
+        //                                        }
+        //                                        contador++;
+        //                                        CantD2Final = (contador * difd1d2) + CantD2Inicio;
+
+        //                                    }
+        //                                    montoentrega = CantD1Final * denominacion1 + CantD2Finall * denominacion2;
+
+        //                                    cant_gav_1 = CantD1Final + cant_gav_1;
+        //                                    cant_gav_2 = CantD2Finall + cant_gav_2;
+        //                                    importe_apagar = importe_apagar + montoentrega;
+        //                                }
+        //                            }
+
+        //                        }
+
+        //                    }
+
+        //                    pbrTrabajo.Maximum = archivo.Length;
+        //                    if (pbrTrabajo.Value < archivo.Length)
+        //                    {
+        //                        pbrTrabajo.Value++;
+        //                    }
+        //                }
+        //                pbrTrabajo.Visible = false;
+        //            }
+
+        //            lblBill1.Text = "Cantidad de billetes de $" + denominacion1.ToString() + ":";
+        //            lblBill2.Text = "Cantidad de billetes de $" + denominacion2.ToString() + ":";
+
+        //            txtBill1.Text = cant_gav_1.ToString();
+        //            txtBill2.Text = cant_gav_2.ToString();
+        //            txtDisponible.Text = importe_apagar.ToString();
+        //            txtTotal.Text = importe_total.ToString();
+
+        //        }
+
+        //        lblError.ForeColor = Color.Green;
+        //        lblError2.ForeColor = Color.Green;
+        //        lblError.Text = "Se actualizaron " + actualizados + " usuarios";                                                                            // mostramos la cantidad que agrego y que actualizo.
+        //        lblError2.Text = "Se agregaron " + agregados + " usuarios nuevos.";
+
+        //    }
+        //    catch (Exception ex)
+        //    {
+
+        //        // Qué ha sucedido
+        //        var mensaje = "Error message: " + ex.Message;
+        //        // Información sobre la excepción interna
+        //        if (ex.InnerException != null)
+        //        {
+        //            mensaje = mensaje + " Inner exception: " + ex.InnerException.Message;
+        //        }
+        //        // Dónde ha sucedido
+        //        mensaje = mensaje + " Stack trace: " + ex.StackTrace;
+        //        LogExeption(mensaje);
+        //        Error frm = new Error();
+        //        frm.ShowDialog();
+        //    }
+
+        //}
 
         public void LogExeption(string MensError)
         {
@@ -503,6 +503,8 @@ namespace Cargar_Archivo
                 cmbGaveta1.Items.Add(linea);                                                                                         // agregamos den a cada combobox
 
                 cmbGaveta2.Items.Add(linea);
+                cmbGaveta3.Items.Add(linea);
+                cmbGaveta4.Items.Add(linea);
 
 
             }
@@ -525,6 +527,292 @@ namespace Cargar_Archivo
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+        private void btnCargar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int actualizados = 0;                                                                                                                           // declaramos una variable int actualizados en 0
+                int agregados = 0;                                                                                                                              // declaramos una variable int agregados en 0
+
+                if (cmbGaveta1.Text == "" && cmbGaveta2.Text == "")
+                {
+                    MessageBox.Show("Debe ingresar la denominacion de las gavetas.");
+                }
+                else
+                {
+                    btnCargar.Enabled = false;                                                                                                                      //deshabilitamos el boton para que no se pueda volver a cargar el archivo. Se debe cerrar y volver a abrir el programa.
+                    lblError.Text = "";                                                                                                                             // apenas se apreta el boton de cargar, mostramos en el label que esta actualizando la base de datos. Cuando termine de cargarlos a la bd, avisara por el mismo label.
+                    lblError2.Text = "";
+                    lblError.ForeColor = Color.DimGray;                                                                                                             // seteamos en el label de error el color de la letra.
+                    lblError2.ForeColor = Color.DimGray;
+                    lblError.Text = "Actualizando...";                                                                                                              // apenas se apreta el boton de cargar, mostramos en el label que esta actualizando la base de datos. Cuando termine de cargarlos a la bd, avisara por el mismo label.
+                    lblError2.Text = "Por favor espere.";
+
+                    int fila1 = negUsuarios.max_connections();
+                    Usuarios usu = new Usuarios();                                                                                                           // copiamos el archivo.csv que actualizamos en la bd como archivo.old en la carpeta backup, y vamos teniendo registro de todos los archivos que van actualizando.
+                    string[] archivo = processFile();
+                    pbrTrabajo.Visible = true;
+                    for (int i = 1; i < archivo.Length; i++)
+                    {                                                                                                                                  // iniciamos un ciclo for por la cantidad de lineas que tiene el archivo. Iniciamos en 1 asi no lee la primer linea del encabezado.
+
+                        if (archivo[i] != null)
+                        {
+                            string[] l = archivo[i].Split(';');
+                            usu.Nombre = l[1];                                                                                                                                                                                                                                             // guardamos en usu.Cuil lo que esta en el vector l en la posicion 3. (cuarta palabra separada por ; de la linea del archivo).                                                                                                                                                                                                    // declaramos una variable int cen y guardamos convertido a int lo que esta en l en la posici                                                                                                                       // guardamos en usu.Centro lo que esta en cen, convertido a string y le agregamos los 0 necesarios para que tenga 3 caracteres.
+                            usu.legajo = l[0];                                                                                                                      // guardamos en usu.legajo que esta en el vector l en la posicion 6. (septima palabra separada por ; de la linea del archivo).
+                            string numero = l[2];
+                            numero = numero.Replace("$", "").Trim();
+                            numero = numero.Replace(".", "");
+                            usu.Importe = int.Parse(numero.Split(',')[0]);
+                            importe_total = importe_total + usu.Importe;
+                            int fila = negUsuarios.BuscarDni(usu.legajo);                                                                                              // declaramos una variable int fila, llamamos a la funcion buscar dni y enviamos dni como paramero. Si encuentra un dni devolvera 1 en la fila,sino devueve 0.
+                            if (fila == 1)                                                                                                                          // nos preguntamos si fila es igual a uno.
+                            {
+                                int a = negUsuarios.ActualizarMonto(usu.legajo, usu.Importe);                                                                          // si es igual a 1, declaramos una variable int a y llamamos a actualizar monto enviando dni e importe. Si encontro dni, va a devolver en a 1, sino devuelve 0.
+                                if (a == 1)                                                                                                                          // preguntamos si a es igual a 1.
+                                {
+                                    actualizados++;                                                                                                                 // si es igual, agrega uno a actualiados.
+                                }
+                            }
+                            else                                                                                                                                    // si fila es distinto de uno
+                            {
+                                int a = negUsuarios.InsertarNuevoUsuario(usu);                                                                                      // declaramos una variable int a y llamamos a la funcion instarnuevousuario y mandamos el objeto usuario como parametro. Si lo pudo guardar, devuelve uno en a sino devuelve 0
+                                if (a == 1)                                                                                                                          // preguntamos si a es igual a 1
+                                {
+                                    agregados++;                                                                                                                    // si es igual a 1, agrega uno a agregado.
+                                }
+                            }
+                        }
+                        pbrTrabajo.Maximum = archivo.Length;
+                        if (pbrTrabajo.Value < archivo.Length)
+                        {
+                            pbrTrabajo.Value++;
+                        }
+                    }
+                    Calculo(importe_total);
+                    pbrTrabajo.Visible = false;
+                }
+
+                lblError.ForeColor = Color.Green;
+                lblError2.ForeColor = Color.Green;
+                lblError.Text = "Se actualizaron " + actualizados + " usuarios";                                                                            // mostramos la cantidad que agrego y que actualizo.
+                lblError2.Text = "Se agregaron " + agregados + " usuarios nuevos.";
+
+            }
+            catch (Exception ex)
+            {
+
+                // Qué ha sucedido
+                var mensaje = "Error message: " + ex.Message;
+                // Información sobre la excepción interna
+                if (ex.InnerException != null)
+                {
+                    mensaje = mensaje + " Inner exception: " + ex.InnerException.Message;
+                }
+                // Dónde ha sucedido
+                mensaje = mensaje + " Stack trace: " + ex.StackTrace;
+                LogExeption(mensaje);
+                Error frm = new Error();
+                frm.ShowDialog();
+            }
+            
+        }
+        public string[] processFile()
+        {
+            try
+            {
+                string[] archivo = File.ReadAllLines(Directory.GetCurrentDirectory() + "\\Archivo csv\\archivo.csv");                                           // con el streamreader abrimos el archivo que vamos a leer. Guardamos las lineas en el vector de string
+                string nom = Path.GetFileName(Directory.GetCurrentDirectory() + "\\Archivo csv\\archivo.csv");                                                  // declaramos string nom y guardamos el nombre del archivo. para guardarlo luego en el archivo logs.
+                FileInfo info = new FileInfo(Directory.GetCurrentDirectory() + "\\Archivo csv\\archivo.csv");                                                   // en fileInfo info guardo la direccion del archivo para obtener informacion
+                string tam = (info.FormatBytes()).ToString();                                                                                                   // en tam, guardamos el peso del archivo con info.formatbytes. cuando los bytes pasan los 1024, nos lo convierte a kb, y asi sucesivamente..
+                Archivos.EscribeArchivoLogs(DateTime.Now, nom, tam);                                                                                            // vamos a escribir el archivo logs enviando la fecha, nombre y tamaño.
+                string nombrearchivo = string.Format("archivo_{0:yyyyMMdd HHmmss}.old", DateTime.Now);                                                          // en nombre archivo, guardamos el nombre del archivo y le agregamos la fecha, hora y la extension .old
+                string path = Directory.GetCurrentDirectory() + "\\BackUp\\" + nombrearchivo;                                                                   // guardamos en path la direccion donde se va a guardar el backup y el nombre del archivo que vamos a crear como archivo.old
+                File.Copy(Directory.GetCurrentDirectory() + "\\Archivo csv\\archivo.csv", path);
+                return archivo;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+        public void Calculo(int total)
+        {
+            Dictionary<int, List<int>> gavetasPorDenominacion = new Dictionary<int, List<int>>();
+
+            // Mapear denominaciones y sus gavetas
+            void AgregarGaveta(ComboBox cmb, int indexGaveta)
+            {
+                if (cmb.SelectedItem != null)
+                {
+                    int denominacion = Convert.ToInt32(cmb.SelectedItem);
+                    if (!gavetasPorDenominacion.ContainsKey(denominacion))
+                        gavetasPorDenominacion[denominacion] = new List<int>();
+                    gavetasPorDenominacion[denominacion].Add(indexGaveta);
+                }
+            }
+
+            // Agregar gavetas activas
+            AgregarGaveta(cmbGaveta1, 1);
+            AgregarGaveta(cmbGaveta2, 2);
+            AgregarGaveta(cmbGaveta3, 3);
+            AgregarGaveta(cmbGaveta4, 4);
+
+            // Usar solo las denominaciones activas seleccionadas por el usuario
+            int[] denominaciones = gavetasPorDenominacion.Keys.OrderByDescending(d => d).ToArray();
+
+            // Diccionario para almacenar la cantidad de billetes por gaveta
+            Dictionary<int, int> billetesPorGaveta = new Dictionary<int, int>();
+
+            // Convertir el monto total a billetes de la menor denominación activa
+            int menorDenominacion = denominaciones.Min();
+            int cantidadTotalBilletes = total / menorDenominacion;
+            int cantidadTotalBilletesMenordeno = cantidadTotalBilletes;
+            // Distribuir billetes equitativamente entre las gavetas disponibles
+            int index = 0;
+            while (cantidadTotalBilletes > 0)
+            {
+                int denom = denominaciones[index];
+
+                // Obtener las gavetas disponibles para esta denominación
+                List<int> gavetasDisponibles = gavetasPorDenominacion[denom];
+
+                // Repartir entre todas las gavetas de esta denominación
+                foreach (int gaveta in gavetasDisponibles)
+                {
+                    if (cantidadTotalBilletes >= denom / menorDenominacion)
+                    {
+                        if (!billetesPorGaveta.ContainsKey(gaveta))
+                            billetesPorGaveta[gaveta] = 0;
+
+                        billetesPorGaveta[gaveta]++;
+                        cantidadTotalBilletes -= denom / menorDenominacion;
+                    }
+                }
+
+                // Alternar entre denominaciones para equilibrar la distribución
+                index = (index + 1) % denominaciones.Length;
+            }
+
+            // Asignar los valores a los TextBox correspondientes
+            txtBill1.Text = billetesPorGaveta.ContainsKey(1) ? billetesPorGaveta[1].ToString() : "0";
+            txtBill2.Text = billetesPorGaveta.ContainsKey(2) ? billetesPorGaveta[2].ToString() : "0";
+            txtBill3.Text = billetesPorGaveta.ContainsKey(3) ? billetesPorGaveta[3].ToString() : "0";
+            txtBill4.Text = billetesPorGaveta.ContainsKey(4) ? billetesPorGaveta[4].ToString() : "0";
+
+            // Mostrar los totales
+            txtTotal.Text = total.ToString();
+            int noSePaga = (total - (cantidadTotalBilletesMenordeno * menorDenominacion));
+            txtDisponible.Text = (total - noSePaga).ToString();
+        }
+        public void CalculoFunciona(int total)
+        {
+            Dictionary<int, List<int>> gavetasPorDenominacion = new Dictionary<int, List<int>>();
+
+            // Mapear denominaciones y sus gavetas
+            void AgregarGaveta(ComboBox cmb, int indexGaveta)
+            {
+                if (cmb.SelectedItem != null)
+                {
+                    int denominacion = Convert.ToInt32(cmb.SelectedItem);
+                    if (!gavetasPorDenominacion.ContainsKey(denominacion))
+                        gavetasPorDenominacion[denominacion] = new List<int>();
+                    gavetasPorDenominacion[denominacion].Add(indexGaveta);
+                }
+            }
+
+            // Agregar gavetas activas
+            AgregarGaveta(cmbGaveta1, 1);
+            AgregarGaveta(cmbGaveta2, 2);
+            AgregarGaveta(cmbGaveta3, 3);
+            AgregarGaveta(cmbGaveta4, 4);
+
+            // Usar solo las denominaciones activas seleccionadas por el usuario
+            int[] denominaciones = gavetasPorDenominacion.Keys.OrderByDescending(d => d).ToArray();
+
+            // Diccionario para almacenar la cantidad de billetes por denominación
+            Dictionary<int, int> gavetas = new Dictionary<int, int>();
+            foreach (int d in denominaciones) gavetas[d] = 0;
+
+            // Convertir el monto total a billetes de la menor denominación activa
+            int menorDenominacion = denominaciones.Min();
+            int cantidadTotalBilletes = total / menorDenominacion;
+
+            // Distribuir billetes equitativamente
+            int index = 0;
+            while (cantidadTotalBilletes > 0)
+            {
+                int denom = denominaciones[index];
+
+                // Verificar que podemos agregar un billete sin pasarnos del total
+                if (cantidadTotalBilletes >= denom / menorDenominacion)
+                {
+                    gavetas[denom]++;
+                    cantidadTotalBilletes -= denom / menorDenominacion;
+                }
+
+                // Alternar entre denominaciones para equilibrar la distribución
+                index = (index + 1) % denominaciones.Length;
+            }
+
+            // Mostrar los resultados
+            string resultado = "Distribución de billetes:\n";
+            foreach (var gaveta in gavetas)
+            {
+                resultado += $"Gaveta {gaveta.Key}: {gaveta.Value} billetes\n";
+            }
+            MessageBox.Show(resultado, "Resultado");
+        }
+
+        public void Calculootro(int total)
+        {
+            total = 1768000;
+            // Definir denominaciones de mayor a menor
+            int[] denominaciones = { 20000, 10000, 2000, 1000 };
+            Dictionary<int, int> gavetas = new Dictionary<int, int>();
+
+            // Inicializar gavetas en 0
+            foreach (int d in denominaciones) gavetas[d] = 0;
+
+            // Convertir el monto total a billetes de 1000
+            int cantidadTotalBilletes = total / 1000;
+
+            // Distribuir billetes de forma equitativa
+            int index = 0;
+            while (cantidadTotalBilletes > 0)
+            {
+                int denom = denominaciones[index];
+
+                // Solo agregar un billete si no nos pasamos del total
+                if (cantidadTotalBilletes >= denom / 1000)
+                {
+                    gavetas[denom]++;
+                    cantidadTotalBilletes -= denom / 1000;
+                }
+
+                // Alternar entre denominaciones para distribuir de manera equitativa
+                index = (index + 1) % denominaciones.Length;
+            }
+
+            // Mostrar resultados
+            string resultado = "Distribución de billetes:\n";
+            foreach (var gaveta in gavetas)
+            {
+                resultado += $"Gaveta {gaveta.Key}: {gaveta.Value} billetes\n";
+            }
+            MessageBox.Show(resultado, "Resultado");
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label12_Click(object sender, EventArgs e)
         {
 
         }

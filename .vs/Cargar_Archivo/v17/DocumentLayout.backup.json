@@ -3,7 +3,11 @@
   "WorkspaceRootPath": "D:\\POWER CONSULTANT\\Cargar_Archivo\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C88A95F7-9B6E-4B01-ACFA-78B9548FB739}|Cargar_Archivo\\Cargar_Archivo.csproj|d:\\power consultant\\cargar_archivo\\cargar_archivo\\principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C88A95F7-9B6E-4B01-ACFA-78B9548FB739}|Cargar_Archivo\\Cargar_Archivo.csproj|d:\\power consultant\\cargar_archivo\\cargar_archivo\\principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C88A95F7-9B6E-4B01-ACFA-78B9548FB739}|Cargar_Archivo\\Cargar_Archivo.csproj|solutionrelative:cargar_archivo\\principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C88A95F7-9B6E-4B01-ACFA-78B9548FB739}|Cargar_Archivo\\Cargar_Archivo.csproj|D:\\POWER CONSULTANT\\Cargar_Archivo\\cargar_archivo\\principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C88A95F7-9B6E-4B01-ACFA-78B9548FB739}|Cargar_Archivo\\Cargar_Archivo.csproj|solutionrelative:cargar_archivo\\principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -11,8 +15,12 @@
       "RelativeMoniker": "D:0:0:{DFF575C4-EF45-4BDC-B606-1FDFC5301DAE}|DAO\\DAO.csproj|solutionrelative:dao\\daousuarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C88A95F7-9B6E-4B01-ACFA-78B9548FB739}|Cargar_Archivo\\Cargar_Archivo.csproj|D:\\POWER CONSULTANT\\Cargar_Archivo\\cargar_archivo\\principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{C88A95F7-9B6E-4B01-ACFA-78B9548FB739}|Cargar_Archivo\\Cargar_Archivo.csproj|solutionrelative:cargar_archivo\\principal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{C88A95F7-9B6E-4B01-ACFA-78B9548FB739}|Cargar_Archivo\\Cargar_Archivo.csproj|D:\\POWER CONSULTANT\\Cargar_Archivo\\cargar_archivo\\inicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C88A95F7-9B6E-4B01-ACFA-78B9548FB739}|Cargar_Archivo\\Cargar_Archivo.csproj|solutionrelative:cargar_archivo\\inicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C88A95F7-9B6E-4B01-ACFA-78B9548FB739}|Cargar_Archivo\\Cargar_Archivo.csproj|D:\\POWER CONSULTANT\\Cargar_Archivo\\cargar_archivo\\inicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C88A95F7-9B6E-4B01-ACFA-78B9548FB739}|Cargar_Archivo\\Cargar_Archivo.csproj|solutionrelative:cargar_archivo\\inicio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -39,6 +47,42 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "Principal.cs",
+              "DocumentMoniker": "D:\\POWER CONSULTANT\\Cargar_Archivo\\Cargar_Archivo\\Principal.cs",
+              "RelativeDocumentMoniker": "Cargar_Archivo\\Principal.cs",
+              "ToolTip": "D:\\POWER CONSULTANT\\Cargar_Archivo\\Cargar_Archivo\\Principal.cs",
+              "RelativeToolTip": "Cargar_Archivo\\Principal.cs",
+              "ViewState": "AgIAABoCAAAAAAAAAAAowCoCAABPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-26T18:30:17.051Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Inicio.cs",
+              "DocumentMoniker": "D:\\POWER CONSULTANT\\Cargar_Archivo\\Cargar_Archivo\\Inicio.cs",
+              "RelativeDocumentMoniker": "Cargar_Archivo\\Inicio.cs",
+              "ToolTip": "D:\\POWER CONSULTANT\\Cargar_Archivo\\Cargar_Archivo\\Inicio.cs",
+              "RelativeToolTip": "Cargar_Archivo\\Inicio.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-26T14:18:20.715Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Inicio.cs [Dise\u00F1o]",
+              "DocumentMoniker": "D:\\POWER CONSULTANT\\Cargar_Archivo\\Cargar_Archivo\\Inicio.cs",
+              "RelativeDocumentMoniker": "Cargar_Archivo\\Inicio.cs",
+              "ToolTip": "D:\\POWER CONSULTANT\\Cargar_Archivo\\Cargar_Archivo\\Inicio.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Cargar_Archivo\\Inicio.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-26T14:18:13.537Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "daoUsuarios.cs",
               "DocumentMoniker": "D:\\POWER CONSULTANT\\Cargar_Archivo\\DAO\\daoUsuarios.cs",
               "RelativeDocumentMoniker": "DAO\\daoUsuarios.cs",
@@ -46,31 +90,19 @@
               "RelativeToolTip": "DAO\\daoUsuarios.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-26T13:14:57.386Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-26T13:14:57.386Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Principal.cs",
-              "DocumentMoniker": "D:\\POWER CONSULTANT\\Cargar_Archivo\\Cargar_Archivo\\Principal.cs",
-              "RelativeDocumentMoniker": "Cargar_Archivo\\Principal.cs",
-              "ToolTip": "D:\\POWER CONSULTANT\\Cargar_Archivo\\Cargar_Archivo\\Principal.cs",
-              "RelativeToolTip": "Cargar_Archivo\\Principal.cs",
-              "ViewState": "AgIAALcBAAAAAAAAAAAQwM8BAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-21T20:06:13.491Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "Principal.cs [Dise\u00F1o]",
               "DocumentMoniker": "D:\\POWER CONSULTANT\\Cargar_Archivo\\Cargar_Archivo\\Principal.cs",
               "RelativeDocumentMoniker": "Cargar_Archivo\\Principal.cs",
-              "ToolTip": "C:\\Sources\\POWER CONSULTANT\\Cargar_Archivo\\Cargar_Archivo\\Principal.cs [Dise\u00F1o]",
+              "ToolTip": "D:\\POWER CONSULTANT\\Cargar_Archivo\\Cargar_Archivo\\Principal.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Cargar_Archivo\\Principal.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-21T20:05:49.208Z"
+              "WhenOpened": "2025-03-21T20:05:49.208Z",
+              "EditorCaption": " [Dise\u00F1o]"
             }
           ]
         }

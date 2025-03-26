@@ -1,0 +1,4 @@
+Error message: Colección modificada; puede que no se ejecute la operación de enumeración. Stack trace:    en System.ThrowHelper.ThrowInvalidOperationException(ExceptionResource resource)
+   en System.Collections.Generic.Dictionary`2.KeyCollection.Enumerator.MoveNext()
+   en Cargar_Archivo.Principal.Calculo(Int32 total) en D:\POWER CONSULTANT\Cargar_Archivo\Cargar_Archivo\Principal.cs:línea 994
+   en Cargar_Archivo.Principal.btnCargar_Click(Object sender, EventArgs e) en D:\POWER CONSULTANT\Cargar_Archivo\Cargar_Archivo\Principal.cs:línea 922
